@@ -88,11 +88,11 @@ Then, rename '**Frisbee**' to '**CREATUREFrisbee**'.
 
 Your **Scene Panel** should look like this:
 
-![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/001%20Frisbee.png?token=APXPEXABZNOBKJO3CZXASMC7S3SXQ)
+![enter image description here](https://i.ibb.co/LR4WWk4/001-Frisbee.png)
 
 Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:
 
-![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/002%20Frisbee%20transform.png?token=APXPEXDDAT52E4MBUSOFOXC7S3S7M)
+![enter image description here](https://i.ibb.co/ScfHJcH/002-Frisbee-transform.png)
 
 Then, hide the Frisbee by unchecking the **Visible** property so that it only appears when the creature caught the Frisbee.
 
@@ -102,14 +102,14 @@ Since the baked animations can only be played using the **Animation Playback Con
 2. Select 'Animation Playback Controller'.
 3. Rename it to match the name of the animation.
 4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:
-	![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/002%20Frisbee%20transform.png?token=APXPEXDDAT52E4MBUSOFOXC7S3S7M)
+	![enter image description here](https://i.ibb.co/qkqZbGK/003-select-animation-clip.gif)
 5. Repeat step 1 to 5 for all animations.
 6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:
-	[004]
+![enter image description here](https://i.ibb.co/pz3hs6w/004-Animation-playback-controllers.gif)
 
 ## Setting up the Patch Editor
 In the Patch Editor, you will see this:
-
+[BLANK]
 All you have to do is drag and drop each **Animation Playback Controller** from the **Asset Panel** into the orange box.
 
 Since there are 4 types of postures, you need to connect each playback controllers to the **Option Picker** based on its posture type.
@@ -118,7 +118,7 @@ Next, select 'CREATURE' from the **Scene Panel* and add its **Animation** proper
 
 Your Patch Editor should look like this:
 
-[005]
+![enter image description here](https://i.ibb.co/ZgRXkF5/005-Patch-Editor.png)
 
 ## Creating the Action Look-Up-Table (LUT)
 I have created the LUT with the following structure:
@@ -169,11 +169,17 @@ The purpose of the calculation is to prevent the creature from 'sliding' if the 
 
 If you are using the Corgi 3D model, your **Patch Editor** will look like this:
 
+![enter image description here](https://i.ibb.co/1fMhFy1/006-speed-patch-editor.png)
 
 To illustrate the process of determining the speed, you will see the following if the speed is
-#### Too fast
-#### Too slow
-#### Just nice
+**Too fast**
+![enter image description here](https://i.ibb.co/gv4Q2Fz/tooFast.gif)
+
+**Too slow**
+![enter image description here](https://i.ibb.co/BqN3PJ0/tooSlow.gif)
+
+**Just nice**
+![enter image description here](https://i.ibb.co/zhy4BrL/justNice.gif)
 
 If the speed is correct, the creature will appear walking on the surface without sliding. Repeat the steps above To find the speed for each moving actions.
 
@@ -227,10 +233,10 @@ export const Actions = {
 };
 ```
 ## Configuring the behaviours
-Alright, this is the most tedious part of the entire project, but I think it's also the most fun part because you'll get to define the behaviour of the creature by using Weighted Random Distribution.
+Alright, this is the most tedious part of the entire project, but I think it's also the most fun part because you'll get to define the behaviour of the creature by using **Weighted Random Distribution.**
 
 ### Understanding weighted random distribution
-Basically, the selection of the next action is random. For example, let's say that the creature's current action is STAND.IDLE, and it has only 3 choices for its next action: 
+Basically, the selection of the next action is *random*. For example, let's say that the creature's current action is STAND.IDLE, and it has only 3 choices for its next action: 
 
  - STAND.IDLE,
  - MOVE.WALK or 
@@ -238,9 +244,9 @@ Basically, the selection of the next action is random. For example, let's say th
 
 If we use a standard [Random Number Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate 0, 1 or 2 to represent STAND.IDLE, MOVE.WALK and LIE.IDLE respectively, then all 3 options will share the same probability of 0.33. This is because the Math.random() function uses ***uniform*** distribution based on the specified range of numbers.
 
-While it's very easy to implement random behaviours by using a Random Number Generator with uniform distribution, we know that creatures aren't that random after all because of their character and beheviours. For example, if the creature is a very active dog, then it is more likely to use MOVE.WALK as its next action as compared to the less active actions such as STAND.IDLE and LIE.IDLE.
+While it's very easy to implement random behaviours by using a Random Number Generator with uniform distribution, we know that creatures behaviour aren't that random after all because of their characters. For example, if the creature is a very active dog, then it is more likely to use MOVE.WALK as its next action as compared to the less active actions such as STAND.IDLE and LIE.IDLE.
 
-This is where we can Weighted Random Distribution to *define each action's probability*, where some actions has higher chances to be the next action. For example, if the creature is an active dog with the current action of STAND.IDLE, then it's next action is more likely to be defined withe the following probability:
+This is where we can **Weighted Random Distribution** to *define each action's probability*, where some actions has higher chances to be the next action. For example, if the creature is an active dog with the current action of STAND.IDLE, then it's next action is more likely to be defined withe the following probability:
 
  - STAND.IDLE: 0.3
  - MOVE.WALK: 0.7
