@@ -350,4 +350,6 @@ With the UI being configured, you can launch the effect by clicking **play** in 
 If you are interested in modifying this project, please feel free to do so. You may find the following logic flowchart useful as you modify the project scripts:
 
 ![enter image description here](https://res.cloudinary.com/devpost/image/fetch/s--_R4OAyIw--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://iili.io/22upSt.jpg)
+
+
 Thank you for reading this tutorial and I hope that you enjoyed bring 3D creatures to life in Spark AR as much as I do!
