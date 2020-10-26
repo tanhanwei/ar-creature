@@ -1,10 +1,11 @@
+
 # Bring a 3D Creature to Life in Spark AR
 In this tutorial, you will learn how to bring 3D creatures to life in Spark AR by creating behaviours that are influenced by Weighted Random Distribution. You will NOT be building everything from scratch because this tutorial focuses only on the creation of creature behaviours.
 
 This is an advanced tutorial and you are expected to know how to use Spark AR's basic functions such as importing 3D models, creating Animation Target, creating Animation Playback Controller and basic JavasScript programming skill.
 
 ## Getting Started
-To follow along, download the unfinished project file here. Open the file and a new project will be created automatically.
+To follow along, download the unfinished project file [here](https://drive.google.com/file/d/1rPp5pclvqC2YkuwXhItCjZYkASS3jq6j/view?usp=sharing). Open the file and a new project will be created automatically.
 
 In this unfinished project,  I have configured everything that you need to get started, including the Scripts and Patches that controls the User Interface, Plane Tracker, Animations, Line-Of-Sight, etc.
 
@@ -155,7 +156,7 @@ If your 3D model does not have a custom running animation, you can duplicate its
 
 ## Determining the speed of moving actions
 The purpose of the calculation is to prevent the creature from 'sliding' if the wrong speed is used. To calculate the speed of each moving actions:
-1. Open the project file named **Creature Speed**.
+1. Download and open this [project file](https://drive.google.com/file/d/12GVpE3VbCzW7JHLWWj5iJs6r74NiYoPd/view?usp=sharing).
 2. Import the same creature's 3D model (You can also use pre-imported the Corgi 3D model)
 3. Drag and drop the creature's 3D model to be the child of planeTracker0.
 4. Change its scale to be the same as your previous project (0.25 for the Corgi).
@@ -338,6 +339,9 @@ export  function  getMoveAction(distance){
 }
 ```
 As mentioned earlier, if you're using your 3D model and the model doesn't have any baked animation for different running speed, you can duplicate its walking **Animation Playback Controller** and change its speed to 200%. Then, reduce its duration in the actionLUT by 50%.
+
+## Debugging
+If you've encountered a problem when following this tutorial, you can download the finished project [here](https://drive.google.com/file/d/1g25pBdq8Rjvv8_eHQ62ra-KzykIuTJyT/view?usp=sharing) as a reference.
 
 ## Testing the AR Creature effect
 With the UI being configured, you can launch the effect by clicking **play** in Spark AR Studio or test it in your own mobile device.
