@@ -86,11 +86,11 @@ Next, drag and drop the 'Frisbee' from the **Asset Panel** into the **Scene Pane
 
 Then, rename '**Frisbee**' to '**CREATUREFrisbee**'.
 
-Your **Scene Panel** should look like this:\
+Your **Scene Panel** should look like this:
 
 ![enter image description here](https://i.ibb.co/LR4WWk4/001-Frisbee.png)
 
-Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:\
+Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:
 
 ![enter image description here](https://i.ibb.co/ScfHJcH/002-Frisbee-transform.png)
 
@@ -101,10 +101,11 @@ Since the baked animations can only be played using the **Animation Playback Con
 1. Click 'Add Asset".
 2. Select 'Animation Playback Controller'.
 3. Rename it to match the name of the animation.
-4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:\
+4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:
 	![enter image description here](https://i.ibb.co/qkqZbGK/003-select-animation-clip.gif)
 5. Repeat step 1 to 5 for all animations.
-6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:\
+6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:
+
 ![enter image description here](https://i.ibb.co/pz3hs6w/004-Animation-playback-controllers.gif)
 
 ## Setting up the Patch Editor
@@ -116,7 +117,7 @@ Since there are 4 types of postures, you need to connect each playback controlle
 
 Next, select 'CREATURE' from the **Scene Panel* and add its **Animation** property into the **Patch Editor** by clicking the tiny right arrow. Once added, connect the output of the last **Option Picker** into the input of the CREATURE Animation Patch.
 
-Your Patch Editor should look like this:\
+Your Patch Editor should look like this:
 
 ![enter image description here](https://i.ibb.co/ZgRXkF5/005-Patch-Editor.png)
 
@@ -172,13 +173,17 @@ If you are using the Corgi 3D model, your **Patch Editor** will look like this:
 ![enter image description here](https://i.ibb.co/1fMhFy1/006-speed-patch-editor.png)
 
 To illustrate the process of determining the speed, you will see the following if the speed is
+
 **Too fast**
+
 ![enter image description here](https://i.ibb.co/gv4Q2Fz/tooFast.gif)
 
 **Too slow**
+
 ![enter image description here](https://i.ibb.co/BqN3PJ0/tooSlow.gif)
 
 **Just nice**
+
 ![enter image description here](https://i.ibb.co/zhy4BrL/justNice.gif)
 
 If the speed is correct, the creature will appear walking on the surface without sliding. Repeat the steps above To find the speed for each moving actions.
