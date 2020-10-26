@@ -86,11 +86,11 @@ Next, drag and drop the 'Frisbee' from the **Asset Panel** into the **Scene Pane
 
 Then, rename '**Frisbee**' to '**CREATUREFrisbee**'.
 
-Your **Scene Panel** should look like this:
+Your **Scene Panel** should look like this:\
 
 ![enter image description here](https://i.ibb.co/LR4WWk4/001-Frisbee.png)
 
-Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:
+Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:\
 
 ![enter image description here](https://i.ibb.co/ScfHJcH/002-Frisbee-transform.png)
 
@@ -101,10 +101,10 @@ Since the baked animations can only be played using the **Animation Playback Con
 1. Click 'Add Asset".
 2. Select 'Animation Playback Controller'.
 3. Rename it to match the name of the animation.
-4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:
+4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:\
 	![enter image description here](https://i.ibb.co/qkqZbGK/003-select-animation-clip.gif)
 5. Repeat step 1 to 5 for all animations.
-6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:
+6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:\
 ![enter image description here](https://i.ibb.co/pz3hs6w/004-Animation-playback-controllers.gif)
 
 ## Setting up the Patch Editor
@@ -116,7 +116,7 @@ Since there are 4 types of postures, you need to connect each playback controlle
 
 Next, select 'CREATURE' from the **Scene Panel* and add its **Animation** property into the **Patch Editor** by clicking the tiny right arrow. Once added, connect the output of the last **Option Picker** into the input of the CREATURE Animation Patch.
 
-Your Patch Editor should look like this:
+Your Patch Editor should look like this:\
 
 ![enter image description here](https://i.ibb.co/ZgRXkF5/005-Patch-Editor.png)
 
