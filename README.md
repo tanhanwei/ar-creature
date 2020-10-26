@@ -102,6 +102,8 @@ Since the baked animations can only be played using the **Animation Playback Con
 2. Select 'Animation Playback Controller'.
 3. Rename it to match the name of the animation.
 4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:
+
+
 	![enter image description here](https://i.ibb.co/qkqZbGK/003-select-animation-clip.gif)
 5. Repeat step 1 to 5 for all animations.
 6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:
