@@ -84,15 +84,15 @@ Next, drag and drop the 'Frisbee' from the **Asset Panel** into the **Scene Pane
 
 ```...DROP_CREATURE-HERE/CREATURE/Bip003/skeleton/Bip002 Pelvis/Bip002 Spine/Bip002 Spine1/Bip002 Spine2/Bip002 Neck/Bip002 Head/Bone005/```
 
-Then, rename 'Frisbee' to 'CREATUREFrisbee'.
+Then, rename '**Frisbee**' to '**CREATUREFrisbee**'.
 
 Your **Scene Panel** should look like this:
 
-[001 Frisbee]
+![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/001%20Frisbee.png?token=APXPEXABZNOBKJO3CZXASMC7S3SXQ)
 
 Position the Frisbee so that it appears in between the mouth of the creature. You may use the following Transformation:
 
-[002 Frisbee Transform]
+![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/002%20Frisbee%20transform.png?token=APXPEXDDAT52E4MBUSOFOXC7S3S7M)
 
 Then, hide the Frisbee by unchecking the **Visible** property so that it only appears when the creature caught the Frisbee.
 
@@ -102,7 +102,7 @@ Since the baked animations can only be played using the **Animation Playback Con
 2. Select 'Animation Playback Controller'.
 3. Rename it to match the name of the animation.
 4. Select its corresponding animation by clicking the dropdown of **Animation Clip**:
-	[003]
+	![enter image description here](https://raw.githubusercontent.com/tanhanwei/ar-creature/main/Screenshots/002%20Frisbee%20transform.png?token=APXPEXDDAT52E4MBUSOFOXC7S3S7M)
 5. Repeat step 1 to 5 for all animations.
 6. If you're using the Corgi model, you should have all these **Animation Playback Controllers**:
 	[004]
@@ -166,6 +166,9 @@ The purpose of the calculation is to prevent the creature from 'sliding' if the 
 10. Change view to **Orthographic Projection** and click again to view from **Right** side.
 11. Tweak the **duration** property of the **Loop Animation** Patch until the creature stops sliding with its moving animation.
 12. The **SPEED** of this moving action equals to distance / duration. Since I have set the distance to be 2 units, the speed of this moving action will be 2 divided by the duration taken (sec) to complete the animation loop.
+
+If you are using the Corgi 3D model, your **Patch Editor** will look like this:
+
 
 To illustrate the process of determining the speed, you will see the following if the speed is
 #### Too fast
