@@ -10,7 +10,7 @@ To follow along, download the unfinished project file [here](https://drive.googl
 In this unfinished project,  I have configured everything that you need to get started, including the Scripts and Patches that controls the User Interface, Plane Tracker, Animations, Line-Of-Sight, etc.
 
 ## Accessing the 3D model
-The unfinished project was configured to handle any 3D models that have various baked animations. For convenience, I have also imported a Corgi 3D model which has many animations baked in.
+The unfinished project was configured to handle any 3D models that have various baked animations. For convenience, I have also imported a Corgi 3D model (created by [nitacawo](https://sketchfab.com/nitacawo)) which has many animations baked in.
 
 You may use any other 3D models as long as they meet the following requirements:
 1. Low poly
@@ -350,3 +350,4 @@ With the UI being configured, you can launch the effect by clicking **play** in 
 If you are interested in modifying this project, please feel free to do so. You may find the following logic flowchart useful as you modify the project scripts:
 
 ![enter image description here](https://res.cloudinary.com/devpost/image/fetch/s--_R4OAyIw--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://iili.io/22upSt.jpg)
+Thank you for reading this tutorial and I hope that you enjoyed bring 3D creatures to life in Spark AR as much as I do!
