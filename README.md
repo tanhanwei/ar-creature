@@ -1,15 +1,15 @@
 # Bring a 3D Creature to Life in Spark AR
-In this tutorial you will learn how to bring 3D creatures to life in Spark AR by creating behaviours that is influenced by Weighted Random Distribution. You will NOT be building everything from scratch because this tutorial focuses only on the creation of creature behaviours.
+In this tutorial, you will learn how to bring 3D creatures to life in Spark AR by creating behaviours that are influenced by Weighted Random Distribution. You will NOT be building everything from scratch because this tutorial focuses only on the creation of creature behaviours.
 
 This is an advanced tutorial and you are expected to know how to use Spark AR's basic functions such as importing 3D models, creating Animation Target, creating Animation Playback Controller and basic JavasScript programming skill.
 
 ## Getting Started
 To follow along, download the unfinished project file here. Open the file and a new project will be created automatically.
 
-In this unfinished project,  I have configured everything that you need to get started, including the Scripts and Patches that controls the User Interface, Plane Tracker, Animations, Line-Of-Sight and etc.
+In this unfinished project,  I have configured everything that you need to get started, including the Scripts and Patches that controls the User Interface, Plane Tracker, Animations, Line-Of-Sight, etc.
 
 ## Accessing the 3D model
-The unfinished project was configured to handle any 3D models that has various baked animations. For convenience, I have also imported a Corgi 3D model which has many animations baked in.
+The unfinished project was configured to handle any 3D models that have various baked animations. For convenience, I have also imported a Corgi 3D model which has many animations baked in.
 
 You may use any other 3D models as long as they meet the following requirements:
 1. Low poly
@@ -22,21 +22,21 @@ However, I highly recommend that you follow along using the Corgi 3D model first
 Before we begin, I'd like to briefly explain what has been built into the unfinished project file.
 
 ### Scene
-The **Scene Panel** has been configured for you to use the Plane Tracker and components for the Line-Of-Sight (LOS) system that I've developed, where the program is able to tell whether the creature is in the camera's view or out of the camera's view.
+The **Scene Panel** has been configured for you to use the Plane Tracker and components for the Line-Of-Sight (LOS) system that I've developed, where the program can tell whether the creature is in the camera's view or out of the camera's view.
 ### Assets
 Similarly, I've imported assets for you to get started quickly. Except for 'Corgi' and 'sunglasses', all asset files are essential for the effect to work. In other words, you can replace the 'Corgi' and 'sunglasses' 3D models with any other 3D models of your choice.
 
 ### Patch Editor
 I have also simplified the **Patch Editor** so that you can easily configure the baked animations to work with its 3D model. The 'AR Creature' Patch is a Grouped Patch that controls the selection of the baked animations.
 
-As you can see, the AR Creature Patch is capable of handling animations with 4 different types of postures: lie, move, sit, stand. This is the reason why I highly recommend that you use the Corgi model instead of your own model because you will be confused if your 3D model only have 2 or less types of postures.
+As you can see, the AR Creature Patch is capable of handling animations with 4 different types of postures: lie, move, sit, stand. This is the reason why I highly recommend that you use the Corgi model instead of your own model because you will be confused if your 3D model only has 2 or fewer types of postures.
 
 ### Scripts
 This is the backbone of the project. I've created 7 scripts with the following purposes:
 #### script.js
-Well, this was the first script that was created to load all the Modules that I need. Plus, I've also implemented the LOS system in this script by utilising the conversion between local and world transforms.
+Well, this was the first script that was created to load all the Modules that I need. Plus, I've also implemented the LOS system in this script by utilizing the conversion between local and world transforms.
 #### actionLUT.js
-Basically this is a Look-Up-Table (LUT) for all the baked animations. I used the word 'action'  instead of 'animation' to avoid confusion with another script that generates animation in Spark AR. This action LUT is a table that contains essential properties of each baked animations such as duration, type, type number and action number.
+Basically, this is a Look-Up-Table (LUT) for all the baked animations. I used the word 'action'  instead of 'animation' to avoid confusion with another script that generates animation in Spark AR. This action LUT is a table that contains essential properties of each baked animations such as duration, type, type number and action number.
 
 This is the first script that you will be configuring.
 
@@ -49,10 +49,10 @@ This configures the different modes of the creature with the following propertie
  - **Free Mode**. The creature can move freely and behaves with non-uniform random actions and motions.
  - **Catch-up Mode**. In this mode, the creature will always move into the Line of Sight (LOS) after the end of current action and motion.
  - **Attention Mode**. When this mode is triggered, the creature will always be within the LOS.
- - **Play Mode**. The creature will walk into LOS and shows excitement (baked animation). In this mode, the user can use a frisbee to play with the creature. Why frisbee? That's because I originally created the effect to play with the Corgi in AR. 
+ - **Play Mode**. The creature will walk into LOS and shows excitement (baked animation). In this mode, the user can use a frisbee to play with the creature. Why frisbee? That's because I created the effect to play with the Corgi in AR. 
  - **Attention-to-Play Mode**. Similar to the Attention Mode, the creature responds based on LOS before the frisbee is thrown. The frisbee can be triggered to be thrown in this mode. If the creature's previous mode is the Throw Mode, it will 'drop' and return the frisbee to the user.
  - **Throw Mode**. The frisbee will be thrown in this mode and the creature will start chasing and catch the frisbee.
- - **Reset Mode**. In this mode the user can reset the plane tracker and re-position the creature.
+ - **Reset Mode**. In this mode the user can reset the plane tracker and reposition the creature.
  - **Test Mode**. For testing and debugging purposes only.
 
 In summary, different modes were created so that the user can interact with the AR creature in different modes.
@@ -68,14 +68,14 @@ You will find all UI configurations in this script. In short, with these configu
 
 These 'modes' are different from the ones in modes.js because the ones in mode.js are for programming purposes only.
 ## Adding the creature into the scene
-Alright, now that you have understood roughly how the unfinished project was prepared, let's begin by adding the creature's 3D model into the scene.
+Now that you have understood roughly how the unfinished project was prepared, let's begin by adding the creature's 3D model into the scene.
 
-To do so, simply drag and drop it into a **Null Object** with the name "DROP_CREATURE-HERE". Make sure that the creature is the child of the ""DROP_CREATURE-HERE" Null Object.
+To do so, drag and drop it into a **Null Object** with the name "DROP_CREATURE-HERE". Make sure that the creature is the child of the ""DROP_CREATURE-HERE" Null Object.
 
 Next, rename the creature that you've added as 'CREATURE'. If you're using the Corgi mode, that means you have to change its name from "Corgi-export-03-actionsRenamed-addedJump" to "CREATURE" (Case sensitive).
 
 ## Configuring the creature's mesh
-Resize the creature by change the mesh's **scale** property. Take note that you shouldnt be changing its scale anywhere else such as its parents' scale.
+Resize the creature by change the mesh's **scale** property. Please take note that you shouldn't be changing its scale anywhere else such as its parents' scale.
 
 For the Corgi, change its mesh **scale** to 0.25 for all axes. If the Corgi's texture is missing, you can load its texture named 'Corgi' manually. 
 
@@ -128,13 +128,13 @@ I have created the LUT with the following structure:
 		ACTION_NAME: {name, type, duration, speed, loop, transition, typeNo, actionNo},
 	}
 ```
-Basically the Action LUT contains the details of the animation:
+Basically, the Action LUT contains the details of the animation:
 
  - **POSTURE_NAME**: I have divided into 4 types of postures: LIE, MOVE, SIT and STAND.
- - **ACTION_NAME**: The specific action name that corresponse to the name of the **Animation Playback Controller**.
+ - **ACTION_NAME**: The specific action name that corresponds to the name of the **Animation Playback Controller**.
  - **name**: Name in String
  - **type**: Posture type in String
- - duration: The duration of the **Animation Clip** in milisecond, which can be obtained by clicking the **Animation Playback Controller** and it will appear near its **Property Panel**.
+ - duration: The duration of the **Animation Clip** in millisecond, which can be obtained by clicking the **Animation Playback Controller** and it will appear near its **Property Panel**.
  - **speed**: If the animation involves moving from one place to another, the speed of the movement needs to be calculated (more on this later).
  - **loop**: A boolean data that specifies whether the animation is loopable.
  - **transition**: A String data that speficies whether the animation is for the transition from one posture to another posture.
@@ -143,7 +143,7 @@ Basically the Action LUT contains the details of the animation:
 
 When you open actionLUT.js, you will find only 3 actions included. This is because these 4 are the minimum requirements for the script to work.
 
-In other words, if you are using your own 3D model, you must make sure that your 3D model have the following animations:
+In other words, if you are using your own 3D model, you must make sure that your 3D model has the following animations:
 
  - NIL. Static neutral pose.
  - STAND.IDLE. The default stand idling animation.
@@ -151,7 +151,7 @@ In other words, if you are using your own 3D model, you must make sure that your
 
 Optionally, I also highly recommend that you include a 'MOVE.RUN' animation so that the creature can move faster when needed.
 
-If your 3D model do not have a custom running animation, you can duplicate its walking **Animation Playback Controller** and change its speed to 200%. Then, reduce its duration in the actionLUT by 50%.
+If your 3D model does not have a custom running animation, you can duplicate its walking **Animation Playback Controller** and change its speed to 200%. Then, reduce its duration in the actionLUT by 50%.
 
 ## Determining the speed of moving actions
 The purpose of the calculation is to prevent the creature from 'sliding' if the wrong speed is used. To calculate the speed of each moving actions:
@@ -249,7 +249,7 @@ Basically, the selection of the next action is *random*. For example, let's say 
 
 If we use a standard [Random Number Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate 0, 1 or 2 to represent STAND.IDLE, MOVE.WALK and LIE.IDLE respectively, then all 3 options will share the same probability of 0.33. This is because the Math.random() function uses ***uniform*** distribution based on the specified range of numbers.
 
-While it's very easy to implement random behaviours by using a Random Number Generator with uniform distribution, we know that creatures behaviour aren't that random after all because of their characters. For example, if the creature is a very active dog, then it is more likely to use MOVE.WALK as its next action as compared to the less active actions such as STAND.IDLE and LIE.IDLE.
+While it's straightforward to implement random behaviours by using a Random Number Generator with uniform distribution, we know that creatures behaviour aren't that random after all because of their characters. For example, if the creature is a very active dog, then it is more likely to use MOVE.WALK as its next action as compared to the less active actions such as STAND.IDLE and LIE.IDLE.
 
 This is where we can **Weighted Random Distribution** to *define each action's probability*, where some actions has higher chances to be the next action. For example, if the creature is an active dog with the current action of STAND.IDLE, then it's next action is more likely to be defined withe the following probability:
 
@@ -270,7 +270,7 @@ Next you need to configure the following functions in **actions.js** to define t
 	randomSit();
 	randomStand();
 ```
-Basically, you just need to:
+Basically, you need to:
 1. Configure each static actions' as a switch statement, one by one.
 2. Indicate all possible nextActionName within the **weightedRand()** function.
 3. Set the probability values for all possible nextActionName. Note that the sum of all probability values must be 1.
@@ -337,12 +337,12 @@ export  function  getMoveAction(distance){
 	}
 }
 ```
-As mentioned earlier, if you're using your own 3D model and the model doesn't have any baked animation for different running speed, you can duplicate its walking **Animation Playback Controller** and change its speed to 200%. Then, reduce its duration in the actionLUT by 50%.
+As mentioned earlier, if you're using your 3D model and the model doesn't have any baked animation for different running speed, you can duplicate its walking **Animation Playback Controller** and change its speed to 200%. Then, reduce its duration in the actionLUT by 50%.
 
 ## Testing the AR Creature effect
-With the UI being configured, you can simply launch the effect by clicking **play** in Spark AR Studio or test it in your own mobile device.
+With the UI being configured, you can launch the effect by clicking **play** in Spark AR Studio or test it in your own mobile device.
 
 ## Going Beyond
-If you are interested to modify this project, please feel free to do so. You may find the following logic flowchart useful as you modify the project scripts:
+If you are interested in modifying this project, please feel free to do so. You may find the following logic flowchart useful as you modify the project scripts:
 
 ![enter image description here](https://res.cloudinary.com/devpost/image/fetch/s--_R4OAyIw--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://iili.io/22upSt.jpg)
