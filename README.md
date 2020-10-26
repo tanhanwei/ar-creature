@@ -341,3 +341,8 @@ As mentioned earlier, if you're using your own 3D model and the model doesn't ha
 
 ## Testing the AR Creature effect
 With the UI being configured, you can simply launch the effect by clicking **play** in Spark AR Studio or test it in your own mobile device.
+
+## Going Beyond
+If you are interested to modify this project, please feel free to do so. You may find the following logic flowchart useful as you modify the project scripts:
+
+![enter image description here](https://res.cloudinary.com/devpost/image/fetch/s--_R4OAyIw--/c_limit,f_auto,fl_lossy,q_auto:eco,w_900/https://iili.io/22upSt.jpg)
