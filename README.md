@@ -111,9 +111,7 @@ Since the baked animations can only be played using the **Animation Playback Con
 ![enter image description here](https://i.ibb.co/pz3hs6w/004-Animation-playback-controllers.gif)
 
 ## Setting up the Patch Editor
-In the Patch Editor, you will see this:
-[BLANK]
-All you have to do is drag and drop each **Animation Playback Controller** from the **Asset Panel** into the orange box.
+In the Patch Editor, all you have to do is drag and drop each **Animation Playback Controller** from the **Asset Panel** into the orange box.
 
 Since there are 4 types of postures, you need to connect each playback controllers to the **Option Picker** based on its posture type.
 
